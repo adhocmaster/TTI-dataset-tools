@@ -1,8 +1,16 @@
 import pandas as pd
 from typing import *
 import math
+from .ColMapper import ColMapper
+from .TrajectoryProcessor import TrajectoryProcessor
 
-class TrajectoryTransformer:
+class TrajectoryTransformer(TrajectoryProcessor):
+
+    def __init__(self,
+            colMapper: ColMapper
+        ):
+        
+        super().__init__(colMapper)
 
     
     def translateOneToLocalSource(self, trackDf:pd.DataFrame, xCol, yCol) -> Tuple[pd.Series, pd.Series]:
@@ -61,16 +69,34 @@ class TrajectoryTransformer:
 
         pass
 
-    # region velocity
+    # derived cols
     def deriveSpeed(self,
-            tracksDf:pd.DataFrame, 
-            idCol, 
-            xVelCol, 
-            yVelCol
+            tracksDf:pd.DataFrame
         ):
 
         tracksDf["speed"] = tracksDf.apply(
-            lambda row: math.sqrt(row[xVelCol] ** 2 + row[yVelCol] ** 2),
+            lambda row: math.sqrt(row[self.xVelCol] ** 2 + row[self.yVelCol] ** 2),
             axis=1
         )
+
+
+    def deriveDisplacements(self,
+            tracksDf:pd.DataFrame
+        ):
+
+        # displacement wrt the first row
+        firstRow = tracksDf.iloc[0]
+        firstX = firstRow[self.xCol]
+        firstY = firstRow[self.yCol]
+
+        tracksDf["displacementX"] = tracksDf.apply(
+            lambda row: abs(firstX - row[self.xCol]),
+            axis=1
+        )
+
+        tracksDf["displacementY"] = tracksDf.apply(
+            lambda row: abs(firstY - row[self.yCol]),
+            axis=1
+        )
+\
         

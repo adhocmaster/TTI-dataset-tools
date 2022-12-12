@@ -1,68 +1,105 @@
 import numpy as np
 import pandas as pd
 from .ColMapper import ColMapper
+from .TrajectoryProcessor import TrajectoryProcessor
 
-class TrajectoryCleaner:
+class TrajectoryCleaner(TrajectoryProcessor):
 
     def __init__(self,
+            colMapper: ColMapper,
             minSpeed,
             maxSpeed,
             minYDisplacement,
             maxXDisplacement,
-            
-            colMapper: ColMapper
         ):
+        
+        super().__init__(colMapper)
         self.minSpeed = minSpeed
         self.maxSpeed = maxSpeed
         self.minYDisplacement = minYDisplacement
         self.maxXDisplacement = maxXDisplacement
 
-        self.idCol = colMapper.idCol
-        self.xCol = colMapper.xCol
-        self.yCol = colMapper.yCol
-        self.xVelCol = colMapper.xVelCol
-        self.yVelCol = colMapper.yVelCol
-        self.speedCol = colMapper.speedCol
 
         pass
+
+    #region outliers
+
+    def getOutliersByCol(self, 
+            tracksDf:pd.DataFrame, 
+            col: str,
+            byIQR=False,
+            returnVals=False
+        ) -> pd.Series:
+
+
+        maxVals = tracksDf[[self.idCol, col]].groupby([self.idCol]).max()
+
+        if byIQR:
+            Q3 = np.quantile(maxVals[col], 0.75)
+            Q1 = np.quantile(maxVals[col], 0.25)
+            IQR = Q3 - Q1
+            lowerBoundary = Q1 - 1.5 * IQR
+            higherBoundary = Q3 + 1.5 * IQR
+
+            print("IQR value for column %s is: %s" % (col, IQR))
+            print(f"using range ({lowerBoundary}, {higherBoundary})")
+            
+
+        else:
+            raise NotImplementedError("Not implemented non IQR yet")
+
+
+
+
+        criterion = maxVals[col].map(
+            lambda val: val < lowerBoundary or val > higherBoundary)
+
+        outliers = maxVals[criterion]
+
+        if returnVals:
+            return outliers
+        else:
+            return outliers.index
+
 
     def getOutliersBySpeed(self,
             tracksDf:pd.DataFrame, 
             byIQR=False,
-            returnSpeed=False
-        ):
+            returnVals=False
+        ) -> pd.Series:
 
-        maxSpeeds = tracksDf[[self.idCol, self.speedCol]].groupby([self.idCol]).max()
-
-
-        
 
         if byIQR:
-            Q3 = np.quantile(maxSpeeds[self.speedCol], 0.75)
-            Q1 = np.quantile(maxSpeeds[self.speedCol], 0.25)
-            IQR = Q3 - Q1
-            minSpeed = Q1 - 1.5 * IQR
-            maxSpeed = Q3 + 1.5 * IQR
-
-            print("IQR value for column %s is: %s" % (self.speedCol, IQR))
-            print(f"using range ({minSpeed}, {maxSpeed})")
+            return self.getOutliersByCol(
+                tracksDf,
+                self.speedCol,
+                byIQR=byIQR,
+                returnVals=returnVals
+            )
             
 
         else:
             pass
 
+    
+    def getOutliersByYDisplacement(self,
+            tracksDf:pd.DataFrame, 
+            byIQR=False,
+            returnVals=False
+        ) -> pd.Series:
 
+        if byIQR:
+            return self.getOutliersByCol(
+                tracksDf,
+                col = self.displacementY,
+                byIQR=byIQR,
+                returnVals=returnVals
+            )
+            
 
-
-        criterion = maxSpeeds[self.speedCol].map(
-            lambda speed: speed < minSpeed or speed > maxSpeed)
-
-        outliers = maxSpeeds[criterion]
-        
-        if returnSpeed:
-            return outliers
         else:
-            return outliers.index
+            pass
+
 
     
     def cleanBySpeed(self, 
@@ -72,8 +109,7 @@ class TrajectoryCleaner:
 
         outlierIds = self.getOutliersBySpeed(
             tracksDf, 
-            byIQR,
-            returnSpeed = False
+            byIQR
         )
         criterion = tracksDf[self.idCol].map(
             lambda trackId: trackId not in outlierIds)
