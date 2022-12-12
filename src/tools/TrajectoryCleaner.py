@@ -63,6 +63,24 @@ class TrajectoryCleaner:
             return outliers
         else:
             return outliers.index
+
+    
+    def cleanBySpeed(self, 
+            tracksDf:pd.DataFrame, 
+            byIQR=False,
+        ) -> pd.DataFrame:
+
+        outlierIds = self.getOutliersBySpeed(
+            tracksDf, 
+            byIQR,
+            returnSpeed = False
+        )
+        criterion = tracksDf[self.idCol].map(
+            lambda trackId: trackId not in outlierIds)
+        
+        return tracksDf[criterion].copy()
+
+
         
 
 
