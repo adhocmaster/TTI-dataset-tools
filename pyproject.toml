@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "tti-dataset-tools"
+version = "0.1.0"
+description = "A set of tools for trajectory dataset transformation, clean-up, and augmentation"
+authors = ["Golam Md Muktadir <muktadir@ucsc.edu>"]
+license = "Mozilla Public License Version 2.0"
+include = [
+    "MIT License",
+]
+
+homepage = "https://github.com/adhocmaster/TTI-dataset-tools"
+repository = "https://github.com/adhocmaster/TTI-dataset-tools"
+keywords = ["Trajectory Dataset", "Trajectory Analysis", "Trajectory Transformation", "Trajectory Augmentation"]
+
+readme = "README.md"
+packages = [{include = "tti_dataset_tools", from="./src"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+seaborn = "^0.12.1"
+pandas = "^1.5.2"
+numpy = "^1.23.5"
+shapely = "^2.0.0"
+tqdm = "^4.64.1"
+jupyterlab = "^3.5.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,9 @@
+name: TTI
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.15
+  - seaborn
+  - jupyterlab
+prefix: C:\Users\adhocmaster\.conda\envs\TTI
