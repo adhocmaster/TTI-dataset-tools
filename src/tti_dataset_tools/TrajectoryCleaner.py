@@ -79,7 +79,17 @@ class TrajectoryCleaner(TrajectoryProcessor):
             
 
         else:
-            pass
+            print(f"using range ({self.minSpeed}, {self.maxSpeed})")
+            maxVals = tracksDf[[self.idCol, self.speedCol]].groupby([self.idCol]).max()
+            criterion = maxVals[self.speedCol].map(
+                lambda val: val < self.minSpeed or val > self.maxSpeed)
+
+            outliers = maxVals[criterion]
+
+            if returnVals:
+                return outliers
+            else:
+                return outliers.index
 
     
     def getOutliersByYDisplacement(self,
