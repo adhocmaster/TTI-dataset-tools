@@ -13,7 +13,7 @@ class TrajectoryTransformer(TrajectoryProcessor):
         super().__init__(colMapper)
 
     
-    def translateOneToLocalSource(self, trackDf:pd.DataFrame, xCol, yCol) -> Tuple[pd.Series, pd.Series]:
+    def translateOneToLocalSource(self, trackDf:pd.DataFrame) -> Tuple[pd.Series, pd.Series]:
         """For a single track only. We cannot make parallel updates for multiple pedestrians as the query would require sql.
 
         Args:
@@ -25,19 +25,16 @@ class TrajectoryTransformer(TrajectoryProcessor):
             pd.DataFrame: _description_
         """
         firstRow = trackDf.iloc[0]
-        originX = firstRow[xCol]
-        originY = firstRow[yCol]
+        originX = firstRow[self.xCol]
+        originY = firstRow[self.yCol]
         # trackDf["localX"] = trackDf[xCol] - originX
         # trackDf["localY"] = trackDf[yCol] - originY
 
-        return trackDf[xCol] - originX, trackDf[yCol] - originY
+        return trackDf[self.xCol] - originX, trackDf[self.yCol] - originY
         
 
-    def translateManyToLocalSource(self,
-            tracksDf:pd.DataFrame, 
-            idCol, 
-            xCol, 
-            yCol
+    def translateAllToLocalSource(self,
+            tracksDf:pd.DataFrame
         ):
         """Will group by idCol and translate based on the first row of each track. We cannot make parallel updates for multiple pedestrians as the query would require sql.
 
@@ -52,20 +49,20 @@ class TrajectoryTransformer(TrajectoryProcessor):
         """
         # TODO pass
 
-        allTrackIds = tracksDf[idCol].unique()
+        allTrackIds = tracksDf[self.idCol].unique()
 
         localXSeres = []
         localYSeres = []
 
         for trackId in allTrackIds:
-            trackDf = tracksDf[tracksDf[idCol] == trackId]
-            X, Y = self.translateOneToLocalSource(trackDf, xCol, yCol)
+            trackDf = tracksDf[tracksDf[self.idCol] == trackId]
+            X, Y = self.translateOneToLocalSource(trackDf)
             localXSeres.append(X)
             localYSeres.append(Y)
         
 
-        tracksDf["localX"] = pd.concat(localXSeres)
-        tracksDf["localY"] = pd.concat(localYSeres)
+        tracksDf[self.localXCol] = pd.concat(localXSeres)
+        tracksDf[self.localYCol] = pd.concat(localYSeres)
 
         pass
 
@@ -89,14 +86,48 @@ class TrajectoryTransformer(TrajectoryProcessor):
         firstX = firstRow[self.xCol]
         firstY = firstRow[self.yCol]
 
-        tracksDf["displacementX"] = tracksDf.apply(
+        tracksDf[self.displacementXCol] = tracksDf.apply(
             lambda row: abs(firstX - row[self.xCol]),
             axis=1
         )
 
-        tracksDf["displacementY"] = tracksDf.apply(
+        tracksDf[self.displacementYCol] = tracksDf.apply(
             lambda row: abs(firstY - row[self.yCol]),
             axis=1
         )
-\
+
+    
+    def rotate(self, trackDf: pd.DataFrame) -> Tuple[pd.Series, pd.Series]:
+        """rotation is y=-y and x=-x. Does inplace transformation on localX, localY
+
+        Args:
+            trackDf (pd.DataFrame): A single track
+        """
+
+        X = -trackDf[self.localXCol]
+        Y = -trackDf[self.localYCol]
+
+        return X, Y
+
+    def flipAlongY(self, trackDf: pd.DataFrame):
+        """Flips along the y axis (negates x coordinates). Does inplace transformation on localX, localY
+
+        Args:
+            trackDf (pd.DataFrame): A single track
+
+        """
+        # TODO
+        
+        pass
+
+    def flipAlongX(self, trackDf: pd.DataFrame):
+        """Flips along the x axis (negates y coordinates). Does inplace transformation on localX, localY
+
+        Args:
+            trackDf (pd.DataFrame): A single track
+
+        """
+        # TODO
+        pass
+
         

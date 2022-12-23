@@ -19,6 +19,7 @@ packages = [{include = "tti_dataset_tools", from="./src"}]
 python = "^3.8.15"
 pandas = "^1.5.2"
 numpy = "^1.20.3"
+shapely = "~1.7.1"
 
 
 [tool.poetry.dev-dependencies]
