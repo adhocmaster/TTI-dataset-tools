@@ -14,5 +14,5 @@ class TrajectoryProcessor:
         self.yVelCol = colMapper.yVelCol
         self.speedCol = colMapper.speedCol
         
-        self.displacementX = "displacementX"
-        self.displacementY = "displacementY"
+        self.displacementXCol = colMapper.displacementXCol
+        self.displacementYCol = colMapper.displacementYCol
