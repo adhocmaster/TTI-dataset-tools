@@ -121,7 +121,7 @@ class TrajectoryCleaner(TrajectoryProcessor):
         ) -> pd.Series:
 
         if byIQR:
-            return self.getMinOutliersByCol(
+            return self.getMaxOutliersByCol(
                 tracksDf,
                 col = self.displacementY,
                 byIQR=byIQR,
@@ -131,11 +131,11 @@ class TrajectoryCleaner(TrajectoryProcessor):
 
         else:
             print(f"using min Y displacement ({self.minYDisplacement})")
-            minVals = tracksDf[[self.idCol, self.displacementYCol]].groupby([self.idCol]).min()
-            criterion = minVals[self.displacementYCol].map(
+            maxVals = tracksDf[[self.idCol, self.displacementYCol]].groupby([self.idCol]).max()
+            criterion = maxVals[self.displacementYCol].map(
                 lambda val: val < self.minYDisplacement)
 
-            outliers = minVals[criterion]
+            outliers = maxVals[criterion]
 
             if returnVals:
                 return outliers
@@ -150,7 +150,7 @@ class TrajectoryCleaner(TrajectoryProcessor):
         ) -> pd.Series:
 
         if byIQR:
-            return self.getMinOutliersByCol(
+            return self.getMaxOutliersByCol(
                 tracksDf,
                 col = self.displacementY,
                 byIQR=byIQR,
