@@ -1,5 +1,6 @@
 import numpy as np
-import pandas as pd
+import pandas as pd 
+from typing import List
 from .ColMapper import ColMapper
 
 class TrajectoryProcessor:
@@ -16,5 +17,24 @@ class TrajectoryProcessor:
         
         self.displacementXCol = colMapper.displacementXCol
         self.displacementYCol = colMapper.displacementYCol
+
         self.localXCol = colMapper.localXCol
         self.localYCol = colMapper.localYCol
+
+
+        self.verticalDirectionCol = colMapper.verticalDirectionCol
+        self.horizontalDirectionCol = colMapper.horizontalDirectionCol
+    
+    def getIds(self, 
+            tracksDf:pd.DataFrame
+        ) -> List[int]:
+
+        return list(tracksDf[self.idCol].unique())
+    
+    def getMeta(self,
+            tracksMeta: pd.DataFrame,
+            trackId: int
+        ) -> pd.Series:
+
+        return tracksMeta[tracksMeta[self.idCol] == trackId].iloc[0]
+

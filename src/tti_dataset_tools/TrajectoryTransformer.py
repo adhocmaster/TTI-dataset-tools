@@ -36,7 +36,9 @@ class TrajectoryTransformer(TrajectoryProcessor):
     def translateAllToLocalSource(self,
             tracksDf:pd.DataFrame
         ):
-        """Will group by idCol and translate based on the first row of each track. We cannot make parallel updates for multiple pedestrians as the query would require sql.
+        """Will group by idCol and translate based on the first row of each track. 
+        We cannot make parallel updates for multiple pedestrians as the query would require sql.
+        Assumes all tracks start on a sidewalk
 
         Args:
             trackDf (pd.DataFrame): _description_
@@ -104,6 +106,15 @@ class TrajectoryTransformer(TrajectoryProcessor):
             trackDf (pd.DataFrame): A single track
         """
 
+        raise NotImplemented("Not implemented error")
+    
+    def rotate180(self, trackDf: pd.DataFrame) -> Tuple[pd.Series, pd.Series]:
+        """rotation is y=-y and x=-x. Does inplace transformation on localX, localY
+
+        Args:
+            trackDf (pd.DataFrame): A single track
+        """
+
         X = -trackDf[self.localXCol]
         Y = -trackDf[self.localYCol]
 
@@ -129,5 +140,8 @@ class TrajectoryTransformer(TrajectoryProcessor):
         """
         # TODO
         pass
+
+    
+    
 
         

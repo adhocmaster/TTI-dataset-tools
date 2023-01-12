@@ -10,7 +10,9 @@ class ColMapper:
             displacementXCol='displacementX',
             displacementYCol='displacementY',
             localXCol='localX',
-            localYCol='localY'
+            localYCol='localY',
+            verticalDirectionCol='verticalDirection',
+            horizontalDirectionCol='horizontalDirection'
         ):
         
         self.idCol = idCol
@@ -24,5 +26,8 @@ class ColMapper:
 
         self.localXCol = localXCol
         self.localYCol = localYCol
+
+        self.verticalDirectionCol = verticalDirectionCol
+        self.horizontalDirectionCol = horizontalDirectionCol
 
         pass
