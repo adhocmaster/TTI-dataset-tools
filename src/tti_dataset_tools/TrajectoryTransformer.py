@@ -80,25 +80,39 @@ class TrajectoryTransformer(TrajectoryProcessor):
 
 
     def deriveDisplacements(self,
-            tracksDf:pd.DataFrame
+            tracksDf:pd.DataFrame,
+            localAxis=False
         ):
+
+        xCol = self.xCol
+        yCol = self.yCol
+
+        if localAxis:
+            xCol = self.localXCol
+            yCol = self.localYCol
 
         # displacement wrt the first row
         firstRow = tracksDf.iloc[0]
-        firstX = firstRow[self.xCol]
-        firstY = firstRow[self.yCol]
+        firstX = firstRow[xCol]
+        firstY = firstRow[yCol]
 
         tracksDf[self.displacementXCol] = tracksDf.apply(
-            lambda row: abs(firstX - row[self.xCol]),
+            lambda row: abs(firstX - row[xCol]),
             axis=1
         )
 
         tracksDf[self.displacementYCol] = tracksDf.apply(
-            lambda row: abs(firstY - row[self.yCol]),
+            lambda row: abs(firstY - row[yCol]),
             axis=1
         )
 
     
+    def deriveDisplacementsInLC(self,
+            tracksDf:pd.DataFrame
+        ):
+        return self.deriveDisplacements(tracksDf, localAxis=True)
+
+
     def rotate(self, trackDf: pd.DataFrame) -> Tuple[pd.Series, pd.Series]:
         """rotation is y=-y and x=-x. Does inplace transformation on localX, localY
 

@@ -131,8 +131,10 @@ class TrajectoryCleaner(TrajectoryProcessor):
 
         else:
             print(f"using min Y displacement ({self.minYDisplacement})")
-            maxVals = tracksDf[[self.idCol, self.displacementYCol]].groupby([self.idCol]).max()
-            criterion = maxVals[self.displacementYCol].map(
+            col = self.displacementYCol
+
+            maxVals = tracksDf[[self.idCol, col]].groupby([self.idCol]).max()
+            criterion = maxVals[col].map(
                 lambda val: val < self.minYDisplacement)
 
             outliers = maxVals[criterion]
@@ -218,6 +220,21 @@ class TrajectoryCleaner(TrajectoryProcessor):
 
 
 
+    def cleanByCol(self, 
+            tracksDf:pd.DataFrame, 
+            col:str,
+            byIQR=False,
+        ) -> pd.DataFrame:
+
+        outlierIds = self.getMaxOutliersByCol(
+            tracksDf,
+            col=col,
+            byIQR=byIQR
+        )
+        criterion = tracksDf[self.idCol].map(
+            lambda trackId: trackId not in outlierIds)
+        
+        return tracksDf[criterion].copy()
         
 
 
