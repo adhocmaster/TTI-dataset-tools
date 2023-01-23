@@ -22,6 +22,8 @@ class InfluenceAnalyzer(TrajectoryProcessor):
             2: 1
         }
 
+        self.unitMultiplier = 10
+
 
     def updateInfluencePoints(
             self, 
@@ -32,14 +34,9 @@ class InfluenceAnalyzer(TrajectoryProcessor):
         x, y = self.getGridCoordinates(row)
         grid[x, y] += influencePoints[0.5]
 
-        self.updateInfluencePointsInRadius(grid, x, y, 50, influencePoints[0.5])
-
-        # within 1 meter
-        self.updateInfluencePointsInRadius(grid, x, y, 100, influencePoints[1])
-
-
-        # within 2 meters
-        self.updateInfluencePointsInRadius(grid, x, y, 200, influencePoints[2])
+        for k in self.influencePoints:
+            radius = int(k * self.unitMultiplier)
+            self.updateInfluencePointsInRadius(grid, x, y, radius, influencePoints[k])
 
         pass
 
@@ -54,7 +51,7 @@ class InfluenceAnalyzer(TrajectoryProcessor):
         pass
 
     def getGridCoordinates(self, row: pd.Series) -> Tuple[int, int]:
-        return int(row[self.localXCol] * 100), int(row[self.localYCol] * 100)
+        return int(row[self.localXCol] * self.unitMultiplier), int(row[self.localYCol] * self.unitMultiplier)
     
     def generateGrid(
             self,
@@ -74,8 +71,8 @@ class InfluenceAnalyzer(TrajectoryProcessor):
             The grid of influence points at the resolution of centimeters.
         """ 
 
-        w = math.ceil(size[0] * 100)
-        h = math.ceil(size[1] * 100)
+        w = math.ceil(size[0] * self.unitMultiplier)
+        h = math.ceil(size[1] * self.unitMultiplier)
 
         return np.zeros((w, h))        
         
