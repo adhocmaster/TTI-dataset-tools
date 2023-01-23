@@ -32,7 +32,7 @@ class InfluenceAnalyzer(TrajectoryProcessor):
             influencePoints: Dict[float, int]
         ):
         x, y = self.getGridCoordinates(row)
-        grid[x, y] += influencePoints[0.5]
+        grid[x, y] += influencePoints[0.5] * 100
 
         for k in self.influencePoints:
             radius = int(k * self.unitMultiplier)
@@ -42,15 +42,21 @@ class InfluenceAnalyzer(TrajectoryProcessor):
 
     def updateInfluencePointsInRadius(self, grid: InfluenceGrid, x: int, y: int, radius: int, point: int):
         w, h = grid.shape
+        # for i in range(-radius, radius + 1):
+        #     if x + i >= 0 and x + i < w:
+        #         for j in range(-radius, radius + 1):
+        #             if y + j >= 0 and y + j < h:
+        #                 if i**2 + j**2 <= radius**2:
+        #                     grid[x + i, y + j] += point
         for i in range(-radius, radius + 1):
-            if x + i >= 0 and x + i < w:
-                for j in range(-radius, radius + 1):
+            for j in range(-radius, radius + 1):
+                if i**2 + j**2 <= radius**2:
                     if y + j >= 0 and y + j < h:
-                        if i**2 + j**2 <= radius**2:
-                            grid[x + i, y + j] += point
+                        grid[x + i, y + j] += point
         pass
 
     def getGridCoordinates(self, row: pd.Series) -> Tuple[int, int]:
+        # return int(row[self.xCol] * self.unitMultiplier), int(row[self.yCol] * self.unitMultiplier)
         return int(row[self.localXCol] * self.unitMultiplier), int(row[self.localYCol] * self.unitMultiplier)
     
     def generateGrid(
@@ -71,8 +77,8 @@ class InfluenceAnalyzer(TrajectoryProcessor):
             The grid of influence points at the resolution of centimeters.
         """ 
 
-        w = math.ceil(size[0] * self.unitMultiplier)
-        h = math.ceil(size[1] * self.unitMultiplier)
+        w = math.ceil(size[0] * self.unitMultiplier) * 2
+        h = math.ceil(size[1] * self.unitMultiplier) *2
 
         return np.zeros((w, h))        
         
