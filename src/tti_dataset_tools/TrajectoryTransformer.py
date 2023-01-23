@@ -57,6 +57,7 @@ class TrajectoryTransformer(TrajectoryProcessor):
         localYSeres = []
 
         for trackId in allTrackIds:
+            # print(f"translating track {trackId}")
             trackDf = tracksDf[tracksDf[self.idCol] == trackId]
             X, Y = self.translateOneToLocalSource(trackDf)
             localXSeres.append(X)
@@ -66,7 +67,18 @@ class TrajectoryTransformer(TrajectoryProcessor):
         tracksDf[self.localXCol] = pd.concat(localXSeres)
         tracksDf[self.localYCol] = pd.concat(localYSeres)
 
+
+        for trackId in allTrackIds:
+            trackDf = tracksDf[tracksDf[self.idCol] == trackId]
+            self.__validateLocalSource(trackDf)
+
         pass
+
+    def __validateLocalSource(self, trackDf: pd.DataFrame):
+        firstRow = trackDf.iloc[0]
+        if firstRow[self.localXCol] != 0.0 or firstRow[self.localYCol] != 0.0:
+            raise Exception(f"track {firstRow[self.idCol]} has incorrect local source {firstRow[self.localXCol]}, {firstRow[self.localYCol]}")
+        
 
     # derived cols
     def deriveSpeed(self,
@@ -78,11 +90,22 @@ class TrajectoryTransformer(TrajectoryProcessor):
             axis=1
         )
 
+    def deriveDisplacementsForOne(self, trackDf: pd.DataFrame):
+        xCol = self.xCol
+        yCol = self.yCol
+        firstRow = trackDf.iloc[0]
+        firstX = firstRow[xCol]
+        firstY = firstRow[yCol]
+
+        return (trackDf[self.xCol] - firstX).abs(), (trackDf[self.yCol] - firstY).abs()
 
     def deriveDisplacements(self,
             tracksDf:pd.DataFrame,
             localAxis=False
         ):
+        """
+        Derives the displacements from the first point of each track
+        """
 
         xCol = self.xCol
         yCol = self.yCol
@@ -91,20 +114,40 @@ class TrajectoryTransformer(TrajectoryProcessor):
             xCol = self.localXCol
             yCol = self.localYCol
 
-        # displacement wrt the first row
-        firstRow = tracksDf.iloc[0]
-        firstX = firstRow[xCol]
-        firstY = firstRow[yCol]
+        # # displacement wrt the first row
+        # firstRow = tracksDf.iloc[0]
+        # firstX = firstRow[xCol]
+        # firstY = firstRow[yCol]
 
-        tracksDf[self.displacementXCol] = tracksDf.apply(
-            lambda row: abs(firstX - row[xCol]),
-            axis=1
-        )
+        # tracksDf[self.displacementXCol] = tracksDf.apply(
+        #     lambda row: abs(firstX - row[xCol]),
+        #     axis=1
+        # )
 
-        tracksDf[self.displacementYCol] = tracksDf.apply(
-            lambda row: abs(firstY - row[yCol]),
-            axis=1
-        )
+        # tracksDf[self.displacementYCol] = tracksDf.apply(
+        #     lambda row: abs(firstY - row[yCol]),
+        #     axis=1
+        # )
+
+        allTrackIds = tracksDf[self.idCol].unique()
+
+        dXSeres = []
+        dYSeres = []
+
+        for trackId in allTrackIds:
+            print(f"translating track {trackId}")
+            trackDf = tracksDf[tracksDf[self.idCol] == trackId]
+            X, Y = self.deriveDisplacementsForOne(trackDf)
+            dXSeres.append(X)
+            dYSeres.append(Y)
+        
+
+        tracksDf[self.displacementXCol] = pd.concat(dXSeres)
+        tracksDf[self.displacementYCol] = pd.concat(dYSeres)
+
+        for trackId in allTrackIds:
+            trackDf = tracksDf[tracksDf[self.idCol] == trackId]
+            self.__validateDisplacement(trackDf)
 
     
     def deriveDisplacementsInLC(self,
@@ -112,6 +155,15 @@ class TrajectoryTransformer(TrajectoryProcessor):
         ):
         return self.deriveDisplacements(tracksDf, localAxis=True)
 
+
+        
+    def __validateDisplacement(self, trackDf: pd.DataFrame):
+        
+        firstRow = trackDf.iloc[0]
+        if firstRow[self.displacementXCol] != 0.0 or firstRow[self.displacementYCol] != 0.0:
+            raise Exception(f"track {firstRow[self.idCol]} has incorrect local source displacement {firstRow[self.displacementXCol]}, {firstRow[self.displacementYCol]}")
+        
+        
 
     def rotate(self, trackDf: pd.DataFrame) -> Tuple[pd.Series, pd.Series]:
         """rotation is y=-y and x=-x. Does inplace transformation on localX, localY
