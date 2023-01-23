@@ -135,7 +135,6 @@ class TrajectoryTransformer(TrajectoryProcessor):
         dYSeres = []
 
         for trackId in allTrackIds:
-            print(f"translating track {trackId}")
             trackDf = tracksDf[tracksDf[self.idCol] == trackId]
             X, Y = self.deriveDisplacementsForOne(trackDf)
             dXSeres.append(X)
