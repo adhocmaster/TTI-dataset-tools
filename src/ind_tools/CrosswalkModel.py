@@ -42,17 +42,12 @@ class CrosswalkModel(TrajectoryProcessor):
         if (yBreakpoints[-1] - roadWidth) < 0.2:
             yBreakpoints.append(roadWidth)
         
-
-        # allTrackIds = tracksDf[self.idCol].unique()
-        # for trackId in allTrackIds:
-        #     trackDf = tracksDf[tracksDf[self.idCol] == trackId]
         yTolerance = 0.1
-        breakpointXVals = defaultdict(lambda : [])
-        for yBreakpoint in yBreakpoints:
-            xVals = self.getAllLocalXAtLocalYBreakpoint(tracksDf, yBreakpoint, yTolerance)
-            if xVals is None:
-                raise Exception(f"no point at y-breakpoint {yBreakpoint}")
-            breakpointXVals[yBreakpoint].extend(xVals)
+        breakpointXVals = self.getAllLocalXAtLocalYBreakpoints(
+                tracksDf = tracksDf,
+                yBreakpoints = yBreakpoints,
+                yTolerance = yTolerance
+            )
 
 
     def getMeanLocalXAtLocalYBreakpoints(
@@ -92,6 +87,23 @@ class CrosswalkModel(TrajectoryProcessor):
             return None
         
         return nearbyRows[self.localXCol].mean()
+
+    def getAllLocalXAtLocalYBreakpoints(
+            self,
+            tracksDf: pd.DataFrame,
+            yBreakpoints: List[float],
+            yTolerance: float
+        ) -> Optional[List[float]]:
+
+        breakpointXVals = defaultdict(lambda : [])
+        for yBreakpoint in yBreakpoints:
+            xVals = self.getAllLocalXAtLocalYBreakpoint(tracksDf, yBreakpoint, yTolerance)
+            if xVals is None:
+                raise Exception(f"no point at y-breakpoint {yBreakpoint}")
+            breakpointXVals[yBreakpoint].extend(xVals)
+        
+        return breakpointXVals
+
 
     def getAllLocalXAtLocalYBreakpoint(
             self,
