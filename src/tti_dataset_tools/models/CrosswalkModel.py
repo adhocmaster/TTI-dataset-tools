@@ -2,6 +2,7 @@ import pandas as pd
 from collections import defaultdict
 import numpy as np
 from shapely.geometry import Point, Polygon
+from itertools import product
 from typing import *
 from ..ColMapper import ColMapper
 from ..TrajectoryProcessor import TrajectoryProcessor
@@ -51,9 +52,25 @@ class CrosswalkModel(TrajectoryProcessor):
                 yTolerance = yTolerance
             )
 
-        # with min-max
-        minVals = [min(breakpointXVals[y]) for y in breakpointXVals]
-        maxVals = [max(breakpointXVals[y]) for y in breakpointXVals]
+
+
+    def generatePolygonFromBreakpointVals(
+            self,
+            breakpointXVals: Dict[float, List[float]]
+        ) -> Polygon: 
+
+        yBreakpoints = list(breakpointXVals.keys())
+        yBreakpoints.sort() # dict keys not sorted
+        # with min-max 
+        minVals = [min(breakpointXVals[y]) for y in yBreakpoints]
+        maxVals = [max(breakpointXVals[y]) for y in yBreakpoints]
+
+        # first mins bot to top, then max top to bottom
+        minPoints = list(zip(minVals, yBreakpoints))
+        maxPoints = list(zip(maxVals, yBreakpoints))
+        maxPoints.reverse()
+        
+        return Polygon(minPoints + maxPoints)
 
 
 

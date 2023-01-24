@@ -235,6 +235,8 @@ class TrajectoryCleaner(TrajectoryProcessor):
             lambda trackId: trackId not in outlierIds)
         
         return tracksDf[criterion].copy()
+    
+    #endregion
         
 
 
