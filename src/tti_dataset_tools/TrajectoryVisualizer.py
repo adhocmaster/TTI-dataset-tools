@@ -2,6 +2,7 @@ import pandas as pd
 from typing import *
 import os
 import matplotlib.pyplot as plt
+import seaborn as sns
 import numpy as np
 
 class TrajectoryVisualizer:
@@ -25,3 +26,12 @@ class TrajectoryVisualizer:
         
         ax.set_aspect('equal', adjustable='box')
         plt.show()
+
+    
+    def showBreakpointVals(self, breakpointXVals:Dict[float, List[float]]):
+        X = []
+        Y = []
+        for y in breakpointXVals:
+            Y.extend([y] * len(breakpointXVals[y]))
+            X.extend(breakpointXVals[y])
+        sns.scatterplot(x=X, y=Y, alpha=0.2)

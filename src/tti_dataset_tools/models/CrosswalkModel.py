@@ -3,7 +3,9 @@ from collections import defaultdict
 import numpy as np
 from shapely.geometry import Point, Polygon
 from typing import *
-from tti_dataset_tools import TrajectoryProcessor, ColMapper, TrajectoryTransformer
+from ..ColMapper import ColMapper
+from ..TrajectoryProcessor import TrajectoryProcessor
+
 
 
 class CrosswalkModel(TrajectoryProcessor):
@@ -48,6 +50,11 @@ class CrosswalkModel(TrajectoryProcessor):
                 yBreakpoints = yBreakpoints,
                 yTolerance = yTolerance
             )
+
+        # with min-max
+        minVals = [min(breakpointXVals[y]) for y in breakpointXVals]
+        maxVals = [max(breakpointXVals[y]) for y in breakpointXVals]
+
 
 
     def getMeanLocalXAtLocalYBreakpoints(
