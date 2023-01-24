@@ -114,9 +114,9 @@ class InfluenceAnalyzer(TrajectoryProcessor):
         # transform to a dataframe
         X = np.arange(-w // 2, w // 2, 1)
         Y = np.arange(0, h, 1)
-        # Z = np.log([
-        #     grid[i+w // 2, j] for i, j in product(X, Y)
-        # ])
+        Z = np.log([
+            grid[i+w // 2, j] for i, j in product(X, Y)
+        ])
         Z = [
             grid[i+w // 2, j] for i, j in product(X, Y)
         ]
