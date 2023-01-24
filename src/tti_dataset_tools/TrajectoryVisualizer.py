@@ -34,4 +34,6 @@ class TrajectoryVisualizer:
         for y in breakpointXVals:
             Y.extend([y] * len(breakpointXVals[y]))
             X.extend(breakpointXVals[y])
-        sns.scatterplot(x=X, y=Y, alpha=0.2)
+        ax = sns.scatterplot(x=X, y=Y, alpha=0.2)
+        ax.set_aspect('equal', adjustable='box')
+        plt.show()
