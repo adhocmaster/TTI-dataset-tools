@@ -1,7 +1,7 @@
 import pandas as pd
 from collections import defaultdict
 import numpy as np
-from shapely.geometry import Point, Polygon
+from shapely.geometry import Point, Polygon, LineString
 from itertools import product
 from typing import *
 from ..ColMapper import ColMapper
@@ -71,6 +71,44 @@ class CrosswalkModel(TrajectoryProcessor):
         maxPoints.reverse()
         
         return Polygon(minPoints + maxPoints)
+    
+    def generate7pointPolygonFromBreakpointVals(
+            self,
+            tracksDf: pd.DataFrame,
+            roadWidth: float,
+            interval: float,
+        ) -> Polygon: 
+
+
+        yBreakpoints = [1, roadWidth - 1, roadWidth]
+        
+        yTolerance = 0.1
+        breakpointXVals = self.getAllLocalXAtLocalYBreakpoints(
+                tracksDf = tracksDf,
+                yBreakpoints = yBreakpoints,
+                yTolerance = yTolerance
+            )
+
+        # with min-max 
+        minVals = [min(breakpointXVals[y]) for y in yBreakpoints]
+        maxVals = [max(breakpointXVals[y]) for y in yBreakpoints]
+
+        # starting section
+        # minVals are left, maxVals are right
+        leftSpline = LineString([
+            (0, minVals[0]),
+            (minVals[0], minVals[1]),
+            (minVals[1], minVals[2])
+        ])
+
+        rightSpline = LineString([
+            (0, maxVals[0]),
+            (maxVals[0], maxVals[1]),
+            (maxVals[1], maxVals[2])
+        ])
+
+    
+    
 
 
 
