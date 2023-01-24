@@ -4,6 +4,7 @@ import math
 from .ColMapper import ColMapper
 from .TrajectoryProcessor import TrajectoryProcessor
 import numpy as np
+from itertools import product
 
 # InfluenceGrid = List[List[int]]
 InfluenceGrid = np.ndarray
@@ -17,9 +18,10 @@ class InfluenceAnalyzer(TrajectoryProcessor):
         super().__init__(colMapper)
 
         self.influencePoints = {
-            0.5: 10,
+            0.5: 5,
             1: 5,
-            2: 1
+            2: 5,
+            # 3: 5
         }
 
         self.unitMultiplier = 10
@@ -31,8 +33,8 @@ class InfluenceAnalyzer(TrajectoryProcessor):
             grid: InfluenceGrid,
             influencePoints: Dict[float, int]
         ):
-        x, y = self.getGridCoordinates(row)
-        grid[x, y] += influencePoints[0.5] * 100
+        x, y = self.getGridCoordinates(grid, row)
+        grid[x, y] += influencePoints[0.5] 
 
         for k in self.influencePoints:
             radius = int(k * self.unitMultiplier)
@@ -55,9 +57,25 @@ class InfluenceAnalyzer(TrajectoryProcessor):
                         grid[x + i, y + j] += point
         pass
 
-    def getGridCoordinates(self, row: pd.Series) -> Tuple[int, int]:
+    def updateInfluencePointsInRadius2(self, grid: InfluenceGrid, x: int, y: int, radius: int, point: int):
+        w, h = grid.shape
+        # for i in range(-radius, radius + 1):
+        #     if x + i >= 0 and x + i < w:
+        #         for j in range(-radius, radius + 1):
+        #             if y + j >= 0 and y + j < h:
+        #                 if i**2 + j**2 <= radius**2:
+        #                     grid[x + i, y + j] += point
+        for i in range(-radius, radius + 1):
+            for j in range(-radius, radius + 1):
+                if i**2 + j**2 <= radius**2:
+                    if y + j >= 0 and y + j < h:
+                        grid[x + i, y + j] += point
+        pass
+
+    def getGridCoordinates(self, grid: InfluenceGrid, row: pd.Series) -> Tuple[int, int]:
         # return int(row[self.xCol] * self.unitMultiplier), int(row[self.yCol] * self.unitMultiplier)
-        return int(row[self.localXCol] * self.unitMultiplier), int(row[self.localYCol] * self.unitMultiplier)
+        w, h = grid.shape
+        return int(row[self.localXCol] * self.unitMultiplier) + w//2, int(row[self.localYCol] * self.unitMultiplier)
     
     def generateGrid(
             self,
@@ -78,7 +96,7 @@ class InfluenceAnalyzer(TrajectoryProcessor):
         """ 
 
         w = math.ceil(size[0] * self.unitMultiplier) * 2
-        h = math.ceil(size[1] * self.unitMultiplier) *2
+        h = math.ceil(size[1] * self.unitMultiplier) 
 
         return np.zeros((w, h))        
         
@@ -92,5 +110,24 @@ class InfluenceAnalyzer(TrajectoryProcessor):
         for index, row in tracksDf.iterrows():
             self.updateInfluencePoints(row, grid, self.influencePoints)
         
-        return grid
+        w, h = grid.shape
+        # transform to a dataframe
+        X = np.arange(-w // 2, w // 2, 1)
+        Y = np.arange(0, h, 1)
+        # Z = np.log([
+        #     grid[i+w // 2, j] for i, j in product(X, Y)
+        # ])
+        Z = [
+            grid[i+w // 2, j] for i, j in product(X, Y)
+        ]
+
+        df1 = pd.DataFrame(list(product(X, Y)), columns=["X", "Y"])
+        dfz = pd.DataFrame(Z, columns=["Density"])
+        df2 = pd.concat([
+                    df1,
+                    dfz
+                ], axis=1)
+        dfH = df2.pivot("Y", "X", "Density")
+
+        return dfH
 
