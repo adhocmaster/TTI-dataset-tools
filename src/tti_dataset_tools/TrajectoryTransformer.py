@@ -66,7 +66,67 @@ class TrajectoryTransformer(TrajectoryProcessor):
 
         pass
 
+
     # derived cols
+    
+    
+    def getTimeDerivativeForOne(self, aTrack: pd.DataFrame, onCol):
+        derivativeSeries = aTrack[onCol].rolling(window=2).apply(
+            lambda values: (values.iloc[0] - values.iloc[1]) / (1 / self.fps))
+        derivativeSeries.iloc[0] = derivativeSeries.iloc[1]
+        # print(derivativeSeries)
+        return derivativeSeries
+
+    def getVelocitySeriesForOne(self, aTrack: pd.DataFrame, onCol):
+        return self.getTimeDerivativeForOne(aTrack, onCol)
+        
+    def getVelocitySeriesForAll(self, tracksDf: pd.DataFrame, onCol):
+        individualSeres = []
+        # for trackId in tqdm(tracksDf[self.idCol].unique(), desc=f"deriving velocity on {onCol} at fps {fps}", position=0):
+        for trackId in tracksDf[self.idCol].unique():
+            aTrack = tracksDf[tracksDf[self.idCol] == trackId]
+            individualSeres.append(
+                self.getTimeDerivativeForOne(aTrack, onCol))
+
+        velSeries = pd.concat(individualSeres)
+        return velSeries
+
+    def getAccelerationSeriesForAll(self, tracksDf: pd.DataFrame, onCol):
+        individualSeres = []
+        # for trackId in tqdm(tracksDf[self.idCol].unique(), desc=f"deriving acceleration on {onCol} at fps {fps}", position=0):
+        for trackId in tracksDf[self.idCol].unique():
+            aTrack = tracksDf[tracksDf[self.idCol] == trackId]
+            individualSeres.append(
+                self.getTimeDerivativeForOne(aTrack, onCol))
+
+        accSeries = pd.concat(individualSeres)
+        return accSeries
+
+    def getAccelerationSerieFromVelocityForOne(self, velocitySeries: pd.Series):
+        seriesAcc = velocitySeries.rolling(window=2).apply(
+            lambda values: (values.iloc[0] - values.iloc[1]) / (1 / self.fps))
+        seriesAcc.iloc[0] = seriesAcc.iloc[1]
+        return seriesAcc
+
+        pass
+
+    def trimHeadAndTailForAll(self, tracksDf: pd.DataFrame):
+        trimmedTracks = []
+        # for trackId in tqdm(tracksDf[self.idCol].unique(), desc=f"trimming trajectories"):
+        for trackId in tracksDf[self.idCol].unique():
+            aTrack = tracksDf[tracksDf[self.idCol] == trackId]
+            trimmedTracks.append(aTrack.iloc[2: len(aTrack) - 2, :]) # 4 frames to exclude invalid acceleration and velocities
+        
+        return pd.concat(trimmedTracks)
+
+        
+    def deriveAxisVelocities(self,
+            tracksDf:pd.DataFrame
+        ):
+        tracksDf[self.xVelCol] = self.getVelocitySeriesForAll(tracksDf, self.xCol)
+        tracksDf[self.yVelCol] = self.getVelocitySeriesForAll(tracksDf, self.yCol)
+        pass
+
     def deriveSpeed(self,
             tracksDf:pd.DataFrame
         ):
