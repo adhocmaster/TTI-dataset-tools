@@ -8,7 +8,7 @@ import numpy as np
 class TrajectoryVisualizer:
 
     
-    def show(self, df: pd.DataFrame, idCol, xCol, yCol, trackIds=None):
+    def show(self, df: pd.DataFrame, idCol, xCol, yCol, trackIds=None, colorCol=None):
         
         fig = plt.figure(figsize=(10, 10))
         ax = fig.add_subplot()
@@ -17,7 +17,10 @@ class TrajectoryVisualizer:
 
         for trackId in trackIds:
             trackDf = df[df[idCol] == trackId]
-            plt.plot(trackDf[xCol], trackDf[yCol])
+            if colorCol is None:
+                plt.plot(trackDf[xCol], trackDf[yCol])
+            else:
+                plt.scatter(trackDf[xCol], trackDf[yCol], s=1, c=trackDf[colorCol].astype(int).tolist())
 
             # plot direction
             lastRow = trackDf.tail(1)
