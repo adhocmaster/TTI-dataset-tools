@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from .ColMapper import ColMapper
 from .TrajectoryProcessor import TrajectoryProcessor
+import logging
 
 class TrajectoryCleaner(TrajectoryProcessor):
 
@@ -39,8 +40,8 @@ class TrajectoryCleaner(TrajectoryProcessor):
             lowerBoundary = Q1 - 1.5 * IQR
             higherBoundary = Q3 + 1.5 * IQR
 
-            print("IQR value for column %s is: %s" % (col, IQR))
-            print(f"using range ({lowerBoundary}, {higherBoundary})")
+            logging.info("IQR value for column %s is: %s" % (col, IQR))
+            logging.info(f"getOutliersByCol: using range ({lowerBoundary}, {higherBoundary})")
             
 
         else:
@@ -101,7 +102,7 @@ class TrajectoryCleaner(TrajectoryProcessor):
             
 
         else:
-            print(f"using range ({self.minSpeed}, {self.maxSpeed})")
+            logging.info(f"getOutliersBySpeed: using range ({self.minSpeed}, {self.maxSpeed})")
             maxVals = tracksDf[[self.idCol, self.speedCol]].groupby([self.idCol]).max()
             criterion = maxVals[self.speedCol].map(
                 lambda val: val < self.minSpeed or val > self.maxSpeed)
