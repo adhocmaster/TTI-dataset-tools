@@ -223,7 +223,7 @@ class TrajectoryTransformer(TrajectoryProcessor):
         
         
 
-    def rotate(self, trackDf: pd.DataFrame) -> Tuple[pd.Series, pd.Series]:
+    def rotate(self, trackDf: pd.DataFrame, xCol: str, yCol: str) -> Tuple[pd.Series, pd.Series]:
         """rotation is y=-y and x=-x. Does inplace transformation on localX, localY
 
         Args:
@@ -232,19 +232,20 @@ class TrajectoryTransformer(TrajectoryProcessor):
 
         raise NotImplemented("Not implemented error")
     
-    def rotate180(self, trackDf: pd.DataFrame) -> Tuple[pd.Series, pd.Series]:
+    def rotate180(self, trackDf: pd.DataFrame, xCol: str, yCol: str) -> Tuple[pd.Series, pd.Series]:
         """rotation is y=-y and x=-x. Does inplace transformation on localX, localY
 
         Args:
             trackDf (pd.DataFrame): A single track
         """
 
-        X = -trackDf[self.localXCol]
-        Y = -trackDf[self.localYCol]
+        X = -trackDf[xCol]
+        Y = -trackDf[yCol]
 
         return X, Y
+    
 
-    def flipAlongY(self, trackDf: pd.DataFrame):
+    def flipAlongY(self, trackDf: pd.DataFrame, xCol: str, yCol: str):
         """Flips along the y axis (negates x coordinates). Does inplace transformation on localX, localY
 
         Args:
@@ -255,7 +256,7 @@ class TrajectoryTransformer(TrajectoryProcessor):
         
         pass
 
-    def flipAlongX(self, trackDf: pd.DataFrame):
+    def flipAlongX(self, trackDf: pd.DataFrame, xCol: str, yCol: str):
         """Flips along the x axis (negates y coordinates). Does inplace transformation on localX, localY
 
         Args:
