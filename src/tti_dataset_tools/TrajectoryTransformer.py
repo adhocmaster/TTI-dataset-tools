@@ -3,6 +3,7 @@ from typing import *
 import math
 from .ColMapper import ColMapper
 from .TrajectoryProcessor import TrajectoryProcessor
+from .TrajectoryMetaBuilder import TrajectoryMetaBuilder
 
 class TrajectoryTransformer(TrajectoryProcessor):
 
@@ -265,6 +266,37 @@ class TrajectoryTransformer(TrajectoryProcessor):
         """
         # TODO
         pass
+
+
+    # region direction transfomations
+    def convertTracksToNorth(self,
+            tracksDf:pd.DataFrame,
+            xCol: str,
+            yCol: str,
+            tracksMeta: pd.DataFrame = None,
+        ) -> Tuple[List[int], pd.DataFrame]:
+        
+        if tracksMeta is None:
+            metaBuilder = TrajectoryMetaBuilder(self.colMapper)
+            tracksMeta = metaBuilder.build([tracksDf], xCol, yCol)
+
+        copiedDf = tracksDf.copy()
+        allPedIds = self.getIds(copiedDf)
+
+        southIds = []
+        for pedId in allPedIds:
+            trackDf = copiedDf[copiedDf[self.idCol] == pedId]
+            trackMeta = self.getMeta(tracksMeta, pedId)
+            # print(trackMeta[self.verticalDirectionCol])
+            if trackMeta[self.verticalDirectionCol] == "SOUTH":
+                southIds.append(pedId)
+                # print(trackMeta[self.idCol])
+                X, Y = self.rotate180(trackDf, xCol=xCol, yCol=yCol)
+                copiedDf.loc[copiedDf[self.idCol] == pedId, xCol] = X
+                copiedDf.loc[copiedDf[self.idCol] == pedId, yCol] = Y
+        
+        return southIds, copiedDf
+    # endregion
 
     
     

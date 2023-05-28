@@ -18,27 +18,13 @@ class IndTransformer(TrajectoryProcessor):
         ) -> List[int]:
         """ 
         converts north-south trajectories into south-north. It does a 180 rotation on local x, y coordinates. Cannot call it repeatedly on the same dataframe
-        """
-        if tracksMeta is None:
-            metaBuilder = TrajectoryMetaBuilder(self.colMapper)
-            tracksMeta = metaBuilder.build([tracksDf], "sceneX", "sceneY")
-
-        copiedDf = tracksDf.copy()
-        allPedIds = self.getIds(copiedDf)
-        southIds = []
-        for pedId in allPedIds:
-            trackDf = copiedDf[copiedDf[self.idCol] == pedId]
-            trackMeta = self.getMeta(tracksMeta, pedId)
-            # print(trackMeta[self.verticalDirectionCol])
-            if trackMeta[self.verticalDirectionCol] == "SOUTH":
-                southIds.append(pedId)
-                # print(trackMeta[self.idCol])
-                X, Y = self.baseTransformer.rotate180(trackDf, xCol=self.localXCol, yCol=self.localYCol)
-                copiedDf.loc[copiedDf[self.idCol] == pedId, self.localXCol] = X
-                copiedDf.loc[copiedDf[self.idCol] == pedId, self.localYCol] = Y
-        
-        
-        return southIds, copiedDf
+        """    
+        return self.baseTransformer.convertTracksToNorth(
+            tracksDf, 
+            xCol=self.localXCol, 
+            yCol=self.localYCol, 
+            tracksMeta=tracksMeta
+        )
     
     def convertSceneTracksToNorth(self,
             tracksDf:pd.DataFrame,
@@ -47,24 +33,10 @@ class IndTransformer(TrajectoryProcessor):
         """ 
         converts north-south trajectories into south-north. It does a 180 rotation on local x, y coordinates. Cannot call it repeatedly on the same dataframe
         """
-        if tracksMeta is None:
-            metaBuilder = TrajectoryMetaBuilder(self.colMapper)
-            tracksMeta = metaBuilder.build([tracksDf], "sceneX", "sceneY")
-
-        copiedDf = tracksDf.copy()
-        allPedIds = self.getIds(copiedDf)
-
-        southIds = []
-        for pedId in allPedIds:
-            trackDf = copiedDf[copiedDf[self.idCol] == pedId]
-            trackMeta = self.getMeta(tracksMeta, pedId)
-            # print(trackMeta[self.verticalDirectionCol])
-            if trackMeta[self.verticalDirectionCol] == "SOUTH":
-                southIds.append(pedId)
-                # print(trackMeta[self.idCol])
-                X, Y = self.baseTransformer.rotate180(trackDf, xCol="sceneX", yCol="sceneY")
-                copiedDf.loc[copiedDf[self.idCol] == pedId, "sceneX"] = X
-                copiedDf.loc[copiedDf[self.idCol] == pedId, "sceneY"] = Y
-        
-        return southIds, copiedDf
+        return self.baseTransformer.convertTracksToNorth(
+            tracksDf, 
+            xCol="sceneX", 
+            yCol="sceneY", 
+            tracksMeta=tracksMeta
+        )
 
