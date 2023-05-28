@@ -8,6 +8,7 @@ class TrajectoryProcessor:
     def __init__(self,
             colMapper: ColMapper
         ):
+        self.colMapper = colMapper
         self.idCol = colMapper.idCol
         self.xCol = colMapper.xCol
         self.yCol = colMapper.yCol

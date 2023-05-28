@@ -1,6 +1,6 @@
 import pandas as pd
 from typing import List, Tuple
-from tti_dataset_tools import TrajectoryProcessor, ColMapper, TrajectoryTransformer
+from tti_dataset_tools import TrajectoryProcessor, ColMapper, TrajectoryTransformer, TrajectoryMetaBuilder
 
 class IndTransformer(TrajectoryProcessor):
 
@@ -19,6 +19,10 @@ class IndTransformer(TrajectoryProcessor):
         """ 
         converts north-south trajectories into south-north. It does a 180 rotation on local x, y coordinates. Cannot call it repeatedly on the same dataframe
         """
+        if tracksMeta is None:
+            metaBuilder = TrajectoryMetaBuilder(self.colMapper)
+            tracksMeta = metaBuilder.build([tracksDf], "sceneX", "sceneY")
+
         copiedDf = tracksDf.copy()
         allPedIds = self.getIds(copiedDf)
         southIds = []
@@ -38,13 +42,18 @@ class IndTransformer(TrajectoryProcessor):
     
     def convertSceneTracksToNorth(self,
             tracksDf:pd.DataFrame,
-            tracksMeta: pd.DataFrame
+            tracksMeta: pd.DataFrame = None
         ) -> Tuple[List[int], pd.DataFrame]:
         """ 
         converts north-south trajectories into south-north. It does a 180 rotation on local x, y coordinates. Cannot call it repeatedly on the same dataframe
         """
+        if tracksMeta is None:
+            metaBuilder = TrajectoryMetaBuilder(self.colMapper)
+            tracksMeta = metaBuilder.build([tracksDf], "sceneX", "sceneY")
+
         copiedDf = tracksDf.copy()
         allPedIds = self.getIds(copiedDf)
+
         southIds = []
         for pedId in allPedIds:
             trackDf = copiedDf[copiedDf[self.idCol] == pedId]
