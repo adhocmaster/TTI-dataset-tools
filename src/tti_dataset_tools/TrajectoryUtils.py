@@ -5,6 +5,7 @@ from .TrackDirection import TrackDirection
 from tqdm import tqdm
 import pandas as pd
 import numpy as np
+import math
 from math import sqrt, inf, cos, sin, radians
 from typing import List, Tuple
 import vg
@@ -495,3 +496,15 @@ class TrajectoryUtils:
         return Point(x, y)
 
 
+    @staticmethod
+    def headingX(a, b) -> float:
+        direction = (b[0] - a[0], b[1] - a[1])
+        angleX = round(math.degrees(math.atan2(direction[1], direction[0])), 2)
+        return angleX
+    
+    @staticmethod
+    def shift(points: List[Tuple[float, float]], shift: Tuple[float, float]) -> List[Tuple[float, float]]:
+        shiftedPoints = []
+        for point in points:
+            shiftedPoints.append((point[0] + shift[0], point[1] + shift[1]))
+        return shiftedPoints
