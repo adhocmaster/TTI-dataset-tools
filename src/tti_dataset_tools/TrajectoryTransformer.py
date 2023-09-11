@@ -212,6 +212,14 @@ class TrajectoryTransformer(TrajectoryProcessor):
     def deriveDisplacementsInLC(self,
             tracksDf:pd.DataFrame
         ):
+        """In local coordinate system
+
+        Args:
+            tracksDf (pd.DataFrame): _description_
+
+        Returns:
+            _type_: _description_
+        """
         return self.deriveDisplacements(tracksDf, localAxis=True)
 
 
