@@ -149,6 +149,25 @@ class TrajectoryTransformer(TrajectoryProcessor):
             lambda row: math.sqrt(row[self.xVelCol] ** 2 + row[self.yVelCol] ** 2),
             axis=1
         )
+    
+    def smoothenSpeed(self,
+            tracksDf:pd.DataFrame,
+            targetFps: float = 2.5
+        ):
+
+        windowSize = int(self.fps / targetFps)
+        
+        allTrackIds = tracksDf[self.idCol].unique()
+        smoothSeres = []
+        for trackId in allTrackIds:
+            trackDf = tracksDf[tracksDf[self.idCol] == trackId]
+            smoothVals = trackDf['speed'].rolling(window=windowSize, win_type='gaussian', min_periods=1, center=True).mean(std=1)
+            smoothVals.fillna(0, inplace=True)
+            smoothSeres.append(smoothVals)
+        
+        print(smoothSeres)
+        tracksDf['speedSmooth'] = pd.concat(smoothSeres)
+
 
     def deriveDisplacementsForOne(self, trackDf: pd.DataFrame):
         xCol = self.xCol
