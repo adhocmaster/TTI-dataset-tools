@@ -165,7 +165,7 @@ class TrajectoryTransformer(TrajectoryProcessor):
             smoothVals.fillna(0, inplace=True)
             smoothSeres.append(smoothVals)
         
-        print(smoothSeres)
+        # print(smoothSeres)
         tracksDf['speedSmooth'] = pd.concat(smoothSeres)
 
 
