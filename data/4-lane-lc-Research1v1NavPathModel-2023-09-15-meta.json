@@ -1,0 +1,3602 @@
+[
+  {
+    "recordingId": 1,
+    "timestamp": 1694834303.709183,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1046,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1045,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.375113249162837
+      }
+    ]
+  },
+  {
+    "recordingId": 2,
+    "timestamp": 1694834303.7141855,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1049,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1048,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 10.26149622464229
+      }
+    ]
+  },
+  {
+    "recordingId": 3,
+    "timestamp": 1694834303.718152,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1052,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1051,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.007388989959521
+      }
+    ]
+  },
+  {
+    "recordingId": 4,
+    "timestamp": 1694834303.7221804,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1055,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1054,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.9963209507789
+      }
+    ]
+  },
+  {
+    "recordingId": 5,
+    "timestamp": 1694834303.7261837,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1058,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1057,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.920436531118232
+      }
+    ]
+  },
+  {
+    "recordingId": 6,
+    "timestamp": 1694834303.73018,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1061,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1060,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.678737189325195
+      }
+    ]
+  },
+  {
+    "recordingId": 7,
+    "timestamp": 1694834303.7341514,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1064,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1063,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 14.912092107804801
+      }
+    ]
+  },
+  {
+    "recordingId": 8,
+    "timestamp": 1694834303.7391803,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1067,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1066,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.270658806446004
+      }
+    ]
+  },
+  {
+    "recordingId": 9,
+    "timestamp": 1694834303.743149,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1070,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1069,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.907907775149196
+      }
+    ]
+  },
+  {
+    "recordingId": 10,
+    "timestamp": 1694834303.7471492,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1073,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1072,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.139922167449221
+      }
+    ]
+  },
+  {
+    "recordingId": 11,
+    "timestamp": 1694834303.7521505,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1076,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1075,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.407715646847317
+      }
+    ]
+  },
+  {
+    "recordingId": 12,
+    "timestamp": 1694834303.7561502,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1079,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1078,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 10.956813164304172
+      }
+    ]
+  },
+  {
+    "recordingId": 13,
+    "timestamp": 1694834303.7601807,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1082,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1081,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.405851324028419
+      }
+    ]
+  },
+  {
+    "recordingId": 14,
+    "timestamp": 1694834303.764181,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1085,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1084,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.584882725678336
+      }
+    ]
+  },
+  {
+    "recordingId": 15,
+    "timestamp": 1694834303.768181,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1088,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1087,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.77329925768107
+      }
+    ]
+  },
+  {
+    "recordingId": 16,
+    "timestamp": 1694834303.7731833,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1091,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1090,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 10.36146373712619
+      }
+    ]
+  },
+  {
+    "recordingId": 17,
+    "timestamp": 1694834303.7771835,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1094,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1093,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.744866293374864
+      }
+    ]
+  },
+  {
+    "recordingId": 18,
+    "timestamp": 1694834303.7821498,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1097,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1096,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 14.873534804340615
+      }
+    ]
+  },
+  {
+    "recordingId": 19,
+    "timestamp": 1694834303.7891502,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1100,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1099,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.6987971432174005
+      }
+    ]
+  },
+  {
+    "recordingId": 20,
+    "timestamp": 1694834303.7931826,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1103,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1102,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.920844664181551
+      }
+    ]
+  },
+  {
+    "recordingId": 21,
+    "timestamp": 1694834303.7981875,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1106,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1105,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 14.392280924595402
+      }
+    ]
+  },
+  {
+    "recordingId": 22,
+    "timestamp": 1694834303.8021805,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1109,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1108,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.40698664037295
+      }
+    ]
+  },
+  {
+    "recordingId": 23,
+    "timestamp": 1694834303.80615,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1112,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1111,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.595755807306254
+      }
+    ]
+  },
+  {
+    "recordingId": 24,
+    "timestamp": 1694834303.81015,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1115,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1114,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.270037683385667
+      }
+    ]
+  },
+  {
+    "recordingId": 25,
+    "timestamp": 1694834303.8151512,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1118,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1117,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.43152818000469
+      }
+    ]
+  },
+  {
+    "recordingId": 26,
+    "timestamp": 1694834303.8191524,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1121,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1120,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 10.032788203470162
+      }
+    ]
+  },
+  {
+    "recordingId": 27,
+    "timestamp": 1694834303.823183,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1124,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1123,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.749160401177647
+      }
+    ]
+  },
+  {
+    "recordingId": 28,
+    "timestamp": 1694834303.8271813,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1127,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1126,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.234300625050206
+      }
+    ]
+  },
+  {
+    "recordingId": 29,
+    "timestamp": 1694834303.83215,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1130,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1129,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.366811439479829
+      }
+    ]
+  },
+  {
+    "recordingId": 30,
+    "timestamp": 1694834303.8361506,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1133,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1132,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.074971759587548
+      }
+    ]
+  },
+  {
+    "recordingId": 31,
+    "timestamp": 1694834303.8401496,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1136,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1135,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.36999329337947
+      }
+    ]
+  },
+  {
+    "recordingId": 32,
+    "timestamp": 1694834303.8441498,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1139,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1138,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 14.41984430895167
+      }
+    ]
+  },
+  {
+    "recordingId": 33,
+    "timestamp": 1694834303.8481507,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1142,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1141,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.484602198548314
+      }
+    ]
+  },
+  {
+    "recordingId": 34,
+    "timestamp": 1694834303.8531497,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1145,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1144,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.853905618042486
+      }
+    ]
+  },
+  {
+    "recordingId": 35,
+    "timestamp": 1694834303.8571494,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1148,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1147,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.141519326288632
+      }
+    ]
+  },
+  {
+    "recordingId": 36,
+    "timestamp": 1694834303.8611803,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1151,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1150,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.61761834744193
+      }
+    ]
+  },
+  {
+    "recordingId": 37,
+    "timestamp": 1694834303.8651516,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1154,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1153,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.551521760953964
+      }
+    ]
+  },
+  {
+    "recordingId": 38,
+    "timestamp": 1694834303.8701503,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1157,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1156,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.486638398050843
+      }
+    ]
+  },
+  {
+    "recordingId": 39,
+    "timestamp": 1694834303.8741496,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1160,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1159,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 14.352872254393453
+      }
+    ]
+  },
+  {
+    "recordingId": 40,
+    "timestamp": 1694834303.8781505,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1163,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1162,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.385449820001901
+      }
+    ]
+  },
+  {
+    "recordingId": 41,
+    "timestamp": 1694834303.8821802,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1166,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1165,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.00534501072305
+      }
+    ]
+  },
+  {
+    "recordingId": 42,
+    "timestamp": 1694834303.8861797,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1169,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1168,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.175325732002038
+      }
+    ]
+  },
+  {
+    "recordingId": 43,
+    "timestamp": 1694834303.8911517,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1172,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1171,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.843352942441893
+      }
+    ]
+  },
+  {
+    "recordingId": 44,
+    "timestamp": 1694834303.8951516,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1175,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1174,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.201805358410702
+      }
+    ]
+  },
+  {
+    "recordingId": 45,
+    "timestamp": 1694834303.9001515,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1178,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1177,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 9.05633941684112
+      }
+    ]
+  },
+  {
+    "recordingId": 46,
+    "timestamp": 1694834303.904184,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1181,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1180,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.368327949051884
+      }
+    ]
+  },
+  {
+    "recordingId": 47,
+    "timestamp": 1694834303.9081843,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1184,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1183,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.962990516426048
+      }
+    ]
+  },
+  {
+    "recordingId": 48,
+    "timestamp": 1694834303.9131515,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1187,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1186,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.620855629031123
+      }
+    ]
+  },
+  {
+    "recordingId": 49,
+    "timestamp": 1694834303.917152,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1190,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1189,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.250113481863654
+      }
+    ]
+  },
+  {
+    "recordingId": 50,
+    "timestamp": 1694834303.92115,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1193,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1192,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.180408394824187
+      }
+    ]
+  },
+  {
+    "recordingId": 51,
+    "timestamp": 1694834303.9261518,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1196,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1195,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 10.997554563750672
+      }
+    ]
+  },
+  {
+    "recordingId": 52,
+    "timestamp": 1694834303.9301803,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1199,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1198,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.224433590129175
+      }
+    ]
+  },
+  {
+    "recordingId": 53,
+    "timestamp": 1694834303.93418,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1202,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1201,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.608028768943791
+      }
+    ]
+  },
+  {
+    "recordingId": 54,
+    "timestamp": 1694834303.9381802,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1205,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1204,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 14.087043995501006
+      }
+    ]
+  },
+  {
+    "recordingId": 55,
+    "timestamp": 1694834303.9421806,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1208,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1207,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.850834702211802
+      }
+    ]
+  },
+  {
+    "recordingId": 56,
+    "timestamp": 1694834303.94615,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1211,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1210,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.755086289951667
+      }
+    ]
+  },
+  {
+    "recordingId": 57,
+    "timestamp": 1694834303.950183,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1214,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1213,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.83042790045521
+      }
+    ]
+  },
+  {
+    "recordingId": 58,
+    "timestamp": 1694834303.955183,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1217,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1216,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.717495112134614
+      }
+    ]
+  },
+  {
+    "recordingId": 59,
+    "timestamp": 1694834303.95915,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1220,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1219,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.69555299411619
+      }
+    ]
+  },
+  {
+    "recordingId": 60,
+    "timestamp": 1694834303.9631505,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1223,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1222,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.858137984550815
+      }
+    ]
+  },
+  {
+    "recordingId": 61,
+    "timestamp": 1694834303.96715,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1226,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1225,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.378228469046334
+      }
+    ]
+  },
+  {
+    "recordingId": 62,
+    "timestamp": 1694834303.9711502,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1229,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1228,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.347239534327723
+      }
+    ]
+  },
+  {
+    "recordingId": 63,
+    "timestamp": 1694834303.97515,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1232,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1231,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.13118902161957
+      }
+    ]
+  },
+  {
+    "recordingId": 64,
+    "timestamp": 1694834303.9801521,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1235,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1234,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.781452679488506
+      }
+    ]
+  },
+  {
+    "recordingId": 65,
+    "timestamp": 1694834303.984152,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1238,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1237,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 10.45688964480722
+      }
+    ]
+  },
+  {
+    "recordingId": 66,
+    "timestamp": 1694834303.988152,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1241,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1240,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.183364994784679
+      }
+    ]
+  },
+  {
+    "recordingId": 67,
+    "timestamp": 1694834303.9921517,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1244,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1243,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.6699193911710575
+      }
+    ]
+  },
+  {
+    "recordingId": 68,
+    "timestamp": 1694834303.997152,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1247,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1246,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.068518381987032
+      }
+    ]
+  },
+  {
+    "recordingId": 69,
+    "timestamp": 1694834304.001152,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1250,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1249,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.301639675561079
+      }
+    ]
+  },
+  {
+    "recordingId": 70,
+    "timestamp": 1694834304.0051522,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1253,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1252,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.868889087868848
+      }
+    ]
+  },
+  {
+    "recordingId": 71,
+    "timestamp": 1694834304.013151,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1256,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1255,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.891684093200002
+      }
+    ]
+  },
+  {
+    "recordingId": 72,
+    "timestamp": 1694834304.0171509,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1259,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1258,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.928470898440675
+      }
+    ]
+  },
+  {
+    "recordingId": 73,
+    "timestamp": 1694834304.0211523,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1262,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1261,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.897361404940948
+      }
+    ]
+  },
+  {
+    "recordingId": 74,
+    "timestamp": 1694834304.0261521,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1265,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1264,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 10.000457030986281
+      }
+    ]
+  },
+  {
+    "recordingId": 75,
+    "timestamp": 1694834304.0301504,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1268,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1267,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.815883941840706
+      }
+    ]
+  },
+  {
+    "recordingId": 76,
+    "timestamp": 1694834304.0341504,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1271,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1270,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.213055737401174
+      }
+    ]
+  },
+  {
+    "recordingId": 77,
+    "timestamp": 1694834304.038152,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1274,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1273,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.568738477919515
+      }
+    ]
+  },
+  {
+    "recordingId": 78,
+    "timestamp": 1694834304.0421512,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1277,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1276,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 10.001349066310231
+      }
+    ]
+  },
+  {
+    "recordingId": 79,
+    "timestamp": 1694834304.0471516,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1280,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1279,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 10.611289011851696
+      }
+    ]
+  },
+  {
+    "recordingId": 80,
+    "timestamp": 1694834304.0511503,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1283,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1282,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 14.541212565547028
+      }
+    ]
+  },
+  {
+    "recordingId": 81,
+    "timestamp": 1694834304.0551507,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1286,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1285,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.78275002049694
+      }
+    ]
+  },
+  {
+    "recordingId": 82,
+    "timestamp": 1694834304.0591512,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1289,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1288,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.423644385668606
+      }
+    ]
+  },
+  {
+    "recordingId": 83,
+    "timestamp": 1694834304.0631511,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1292,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1291,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.890646624041955
+      }
+    ]
+  },
+  {
+    "recordingId": 84,
+    "timestamp": 1694834304.0671515,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1295,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1294,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.255934703133333
+      }
+    ]
+  },
+  {
+    "recordingId": 85,
+    "timestamp": 1694834304.0721517,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1298,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1297,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.571753484782892
+      }
+    ]
+  },
+  {
+    "recordingId": 86,
+    "timestamp": 1694834304.0761516,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1301,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1300,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.848519247637862
+      }
+    ]
+  },
+  {
+    "recordingId": 87,
+    "timestamp": 1694834304.0801518,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1304,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1303,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.05380809199656
+      }
+    ]
+  },
+  {
+    "recordingId": 88,
+    "timestamp": 1694834304.085152,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1307,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1306,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 7.841377017741402
+      }
+    ]
+  },
+  {
+    "recordingId": 89,
+    "timestamp": 1694834304.0891514,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1310,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1309,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.190666559637407
+      }
+    ]
+  },
+  {
+    "recordingId": 90,
+    "timestamp": 1694834304.0931525,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1313,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1312,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.933096342803182
+      }
+    ]
+  },
+  {
+    "recordingId": 91,
+    "timestamp": 1694834304.0971518,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1316,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1315,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 11.564253001163255
+      }
+    ]
+  },
+  {
+    "recordingId": 92,
+    "timestamp": 1694834304.1021514,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1319,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1318,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.133042152613925
+      }
+    ]
+  },
+  {
+    "recordingId": 93,
+    "timestamp": 1694834304.1061528,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1322,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1321,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.201228843773993
+      }
+    ]
+  },
+  {
+    "recordingId": 94,
+    "timestamp": 1694834304.1101508,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1325,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1324,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.247231190339729
+      }
+    ]
+  },
+  {
+    "recordingId": 95,
+    "timestamp": 1694834304.1141515,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1328,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1327,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 10.356068930789645
+      }
+    ]
+  },
+  {
+    "recordingId": 96,
+    "timestamp": 1694834304.1181533,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1331,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1330,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 13.491229010468679
+      }
+    ]
+  },
+  {
+    "recordingId": 97,
+    "timestamp": 1694834304.1231515,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1334,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1333,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.290631539599717
+      }
+    ]
+  },
+  {
+    "recordingId": 98,
+    "timestamp": 1694834304.127153,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1337,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1336,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 8.225727495198374
+      }
+    ]
+  },
+  {
+    "recordingId": 99,
+    "timestamp": 1694834304.1311529,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1340,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1339,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 14.550801664957167
+      }
+    ]
+  },
+  {
+    "recordingId": 100,
+    "timestamp": 1694834304.135152,
+    "fps": 25.0,
+    "participants": [
+      {
+        "id": 1343,
+        "class": "pedestrian",
+        "meta": {
+          "source": [
+            -127.5,
+            25.0
+          ],
+          "destination": [
+            -112.0,
+            25.0
+          ]
+        }
+      },
+      {
+        "id": 1342,
+        "class": "vehicle",
+        "meta": {
+          "source": [
+            -118.0,
+            60.900001525878906
+          ],
+          "destination": [
+            -115.0999984741211,
+            0.800000011920929
+          ]
+        },
+        "maxSpeed": 12.994738090549511
+      }
+    ]
+  }
+]

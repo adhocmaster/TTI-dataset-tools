@@ -161,7 +161,8 @@ class TrajectoryTransformer(TrajectoryProcessor):
         smoothSeres = []
         for trackId in allTrackIds:
             trackDf = tracksDf[tracksDf[self.idCol] == trackId]
-            smoothVals = trackDf['speed'].rolling(window=windowSize, win_type='gaussian', min_periods=1, center=True).mean(std=1)
+            # smoothVals = trackDf['speed'].rolling(window=windowSize, win_type='gaussian', min_periods=1, center=True).mean(std=1)
+            smoothVals = trackDf['speed'].rolling(window=windowSize, min_periods=1, center=True).mean()
             smoothVals.fillna(0, inplace=True)
             smoothSeres.append(smoothVals)
         
