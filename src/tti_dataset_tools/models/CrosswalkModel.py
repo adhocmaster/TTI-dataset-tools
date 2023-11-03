@@ -157,6 +157,7 @@ class CrosswalkModel(TrajectoryProcessor):
             yTolerance: float
         ) -> Optional[List[float]]:
 
+        print(yBreakpoints)
         breakpointXVals = defaultdict(lambda : [])
         for yBreakpoint in yBreakpoints:
             xVals = self.getAllLocalXAtLocalYBreakpoint(tracksDf, yBreakpoint, yTolerance)
