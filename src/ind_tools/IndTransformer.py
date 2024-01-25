@@ -15,7 +15,7 @@ class IndTransformer(TrajectoryProcessor):
 
             tracksDf:pd.DataFrame,
             tracksMeta: pd.DataFrame
-        ) -> List[int]:
+        ) -> Tuple[List[int], pd.DataFrame]:
         """ 
         converts north-south trajectories into south-north. It does a 180 rotation on local x, y coordinates. Cannot call it repeatedly on the same dataframe
         """    
