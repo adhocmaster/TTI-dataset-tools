@@ -186,7 +186,7 @@ class CrosswalkModel(TrajectoryProcessor):
         if len(nearbyRows) == 0:
             return None
         
-        return nearbyRows[self.localXCol]
+        return nearbyRows[self.localXCol].tolist()
 
     def generateScenePolygon(
             self,
