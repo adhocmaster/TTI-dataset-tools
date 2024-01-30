@@ -538,3 +538,18 @@ class TrajectoryUtils:
             return None
         
         return nearbyRows[xCol].tolist()
+
+    @staticmethod
+    def getExtremeXAtYBreakpoint(trackDf: pd.DataFrame, xCol: str, yCol: str, yBreakpoint: float, yTolerance: float) -> Optional[float]:
+        
+        candidatesForX = TrajectoryUtils.getAllXAtYBreakpoint(trackDf, xCol, yCol, yBreakpoint, yTolerance)
+        if candidatesForX is None:
+            return None
+            
+        midX = np.mean(candidatesForX)
+        if midX < 0:
+            midX = min(candidatesForX)
+        else:
+            midX = max(candidatesForX)
+        
+        return midX
