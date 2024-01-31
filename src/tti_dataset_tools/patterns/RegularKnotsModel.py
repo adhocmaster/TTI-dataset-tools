@@ -55,7 +55,11 @@ class RegularKnotsModel(TrajectoryProcessor):
             
             finalX, finalY = pedDf.iloc[-1][self.localXCol], pedDf.iloc[-1][self.localYCol]
             
-            slope1 = np.log(midY / midX)
+            slope1 = midY / midX
+            if slope1 > 0:
+                slope1 = np.log(slope1)
+            else:
+                slope1 = -np.log(abs(slope1))
             
             finalYDiff = (finalY - midY)
 
@@ -67,8 +71,12 @@ class RegularKnotsModel(TrajectoryProcessor):
                 logging.warn(f"finalXDiff is very low {finalXDiff}")
                 # finalXDiff = 0.000001
 
-            slope2 = np.log((finalY - midY) / (finalX - midX))
-            # slope2 = (finalY - midY) / (finalX - midX)
+            slope2 = (finalY - midY) / (finalX - midX)
+
+            if slope2 > 0:
+                slope2 = np.log(slope2)
+            else:
+                slope2 = -np.log(abs(slope2))
                 
             rows.append((pedId, midX, midY, finalX, finalY, slope1, slope2))
             if plot:
@@ -81,7 +89,7 @@ class RegularKnotsModel(TrajectoryProcessor):
         if plot:
             plt.scatter(df["midX"], df["midY"], zorder = 2)
             plt.scatter(df["finalX"], df["finalY"], zorder = 2)
-            plt.ylim(-0.2, midY * 2 + 0.2)
+            # plt.ylim(-0.2, midY * 2 + 0.2)
             plt.show()
 
             sns.displot(df, x="log-slope1", y="log-slope2")
@@ -147,7 +155,11 @@ class RegularKnotsModel(TrajectoryProcessor):
                 if abs(yDiff) < 0.000001:
                     logging.warn(f"yDiff is very low {yDiff}")
                     # yDiff = 0.000001
-                slope = np.log(yDiff / xDiff)
+                slope = yDiff / xDiff
+                if slope > 0:
+                    slope = np.log(slope)
+                else:
+                    slope = -np.log(abs(slope))
                 slopes.append(slope)
             
             rowData = [pedId]
@@ -160,7 +172,7 @@ class RegularKnotsModel(TrajectoryProcessor):
                 Y = [y for x, y in XY]
                 plt.plot(X, Y, zorder=1)
                 plt.scatter(X, Y, zorder=2)
-                plt.ylim(-0.2, max(Y)+0.2)
+                # plt.ylim(-0.2, max(Y)+0.2)
 
         colunmNames = [self.idCol]
         for i in range(nSlopePoints):
