@@ -20,31 +20,37 @@ class RegularKnotsModel(TrajectoryProcessor):
         ):
         super().__init__(colMapper)
     
-    def getSingleKnotData(self, pedSource: pd.DataFrame, midY: float, midYTolerance: float, plot=True) -> pd.DataFrame:
+    def getSingleKnotData(self, pedSource: pd.DataFrame, midY: float, midYTolerance: float, plot=True, ignoreBads=False, debug=False) -> pd.DataFrame:
         """
         Get the data for a single knot from the dataframe of all pedestrians.
 
-        Parameters
-        ----------
-        allPedDf : pd.DataFrame
-            Dataframe of all pedestrians.
+        Args:
+            pedSource (pd.DataFrame): _description_
+            midY (float): _description_
+            midYTolerance (float): _description_
+            plot (bool, optional): _description_. Defaults to True.
+            ignoreBads (bool, optional): _description_. Defaults to False.
 
-        Returns
-        -------
-        pd.DataFrame
-            Dataframe of the single knot.
+        Returns:
+            pd.DataFrame: _description_
         """
-        # midY = 3.0
-        # midYTolerance = 0.5
         pedIds = pedSource[self.idCol].unique()
         rows = []
-        # print(pedSource)
+        badTrajectories = []
         for pedId in pedIds:
             # print(pedId)
             pedDf = pedSource[pedSource[self.idCol] == pedId]
             # print(pedDf.head())
             
             midX = TrajectoryUtils.getExtremeXAtYBreakpoint(pedDf, self.localXCol, self.localYCol, midY, midYTolerance)
+            if midX is None:
+                badTrajectories.append(pedId)
+                if debug:
+                    logging.warn(f"midX is None for pedId {pedId}")
+                if ignoreBads:
+                    continue
+                else:
+                    return None
             # print(midX, candidatesForX)
             
             finalX, finalY = pedDf.iloc[-1][self.localXCol], pedDf.iloc[-1][self.localYCol]
@@ -73,15 +79,19 @@ class RegularKnotsModel(TrajectoryProcessor):
         df = pd.DataFrame(rows, columns=[self.idCol, "midX", "midY", "finalX", "finalY", "log-slope1", "log-slope2"])
 
         if plot:
-            sns.scatterplot(df, x="midX", y="midY")
-            ax = sns.scatterplot(df, x="finalX", y="finalY", zorder = 2)
-            ax.set_ylim(-0.2, midY * 2 + 0.2)
+            plt.scatter(df["midX"], df["midY"], zorder = 2)
+            plt.scatter(df["finalX"], df["finalY"], zorder = 2)
+            plt.ylim(-0.2, midY * 2 + 0.2)
             plt.show()
+
             sns.displot(df, x="log-slope1", y="log-slope2")
+            # plt.ylim(-0.2, midY * 2 + 0.2)
         
+        if len(badTrajectories) > 0:
+            logging.warn(f"Bad trajectories: {len(badTrajectories)}. \nSet debug=True to see the errors.")
         return df
 
-    def getKnotData(self, pedSource: pd.DataFrame, yBreakpoints: List[float], yTolerance: float, plot=True, addFinal=True) -> pd.DataFrame:
+    def getKnotData(self, pedSource: pd.DataFrame, yBreakpoints: List[float], yTolerance: float, plot=True, addFinal=True, ignoreBads=False, debug=False) -> pd.DataFrame:
         """Assumes origin is at (0, 0)
 
         Args:
@@ -100,12 +110,27 @@ class RegularKnotsModel(TrajectoryProcessor):
         if addFinal:
             nSlopePoints += 1
         rows = []
+        badTrajectories = []
+        badTrajectoryErrors = []
         for pedId in pedIds:
             pedDf = pedSource[pedSource[self.idCol] == pedId]
             XY = [(0, 0)]
+            valid = True
             for y in yBreakpoints:
                 x = TrajectoryUtils.getExtremeXAtYBreakpoint(pedDf, self.localXCol, self.localYCol, y, yTolerance)
+                if x is None:
+                    badTrajectories.append(pedId)
+                    # badTrajectoryErrors.append(f"X is None for pedId {pedId} at y {y} with tolerance {yTolerance}")
+                    if debug:
+                        logging.info(f"X is None for pedId {pedId} at y {y} with tolerance {yTolerance}")
+                    if ignoreBads:
+                        valid = False
+                        break
+                    else:
+                        return None
                 XY.append((x, y))
+            if not valid:
+                continue
 
             if addFinal:
                 finalX, finalY = pedDf.iloc[-1][self.localXCol], pedDf.iloc[-1][self.localYCol]
@@ -145,6 +170,8 @@ class RegularKnotsModel(TrajectoryProcessor):
         if plot:
             for i in range(1, nSlopePoints):
                 sns.displot(df, x=f"log-slope{i}", y=f"log-slope{i+1}")
+        if len(badTrajectories) > 0:
+            logging.warn(f"Bad trajectories: {len(badTrajectories)}. \nSet debug=True to see the errors.")
         return df
             
 

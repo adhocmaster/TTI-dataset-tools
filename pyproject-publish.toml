@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tti-dataset-tools"
-version = "0.1.9"
+version = "0.1.10"
 description = "A set of tools for trajectory dataset transformation, clean-up, and augmentation"
 authors = ["Golam Md Muktadir <muktadir@ucsc.edu>"]
 license = "Mozilla Public License Version 2.0"

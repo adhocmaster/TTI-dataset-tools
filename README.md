@@ -4,4 +4,6 @@
 ```
 poetry build
 poetry publish
+
+poetry install --only-root
 ```
