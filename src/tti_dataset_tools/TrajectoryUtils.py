@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import math
 from math import sqrt, inf, cos, sin, radians
-from typing import List, Tuple
+from typing import *
 import vg
 import logging
 
@@ -508,3 +508,48 @@ class TrajectoryUtils:
         for point in points:
             shiftedPoints.append((point[0] + shift[0], point[1] + shift[1]))
         return shiftedPoints
+
+
+    # region methods to query data
+    @staticmethod
+    def getAllXAtYBreakpoint(trackDf: pd.DataFrame, xCol:str, yCol:str, yBreakpoint: float, yTolerance: float) -> Optional[List[float]]:
+        """_summary_
+
+        Args:
+            trackDf (pd.DataFrame): trajectory of a single pedestrian
+            xCol (str): _description_
+            yCol (str): _description_
+            yBreakpoint (float): _description_
+            yTolerance (float): _description_
+
+        Returns:
+            Optional[List[float]]: _description_
+        """
+        # find localY values within range of breakpoint +- 0.1 meter. Get the average localX values
+
+        yMin = yBreakpoint - yTolerance
+        yMax = yBreakpoint + yTolerance
+        
+        criterion = trackDf[yCol].map(
+            lambda y: y >= yMin and y <= yMax
+        )
+        nearbyRows = trackDf[criterion]
+        if len(nearbyRows) == 0:
+            return None
+        
+        return nearbyRows[xCol].tolist()
+
+    @staticmethod
+    def getExtremeXAtYBreakpoint(trackDf: pd.DataFrame, xCol: str, yCol: str, yBreakpoint: float, yTolerance: float) -> Optional[float]:
+        
+        candidatesForX = TrajectoryUtils.getAllXAtYBreakpoint(trackDf, xCol, yCol, yBreakpoint, yTolerance)
+        if candidatesForX is None:
+            return None
+            
+        midX = np.mean(candidatesForX)
+        if midX < 0:
+            midX = min(candidatesForX)
+        else:
+            midX = max(candidatesForX)
+        
+        return midX
